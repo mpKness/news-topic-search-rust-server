@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Ludington Post{% endblock %}</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/horse-standing-up-silhouette-svgrepo-com.svg">
+    <link rel="stylesheet" type="text/css" href="/assets/styles.css">
+</head>
+<body>
+    <header>
+        <img src="/assets/horse-standing-up-silhouette-svgrepo-com.svg" alt="Site Icon">
+        <h1>Ludington Post</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Ludington Post{% endblock %}
+
+{% block content %}
+<h1>Seach for: {{ name }}!</h1>
+<form action="/" method="post">
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" name="name">
+    <button type="submit">Submit</button>
+</form>
+{% if list_of_links %}
+<h2>List of links for {{ name }}:</h2>
+<ul>
+    {% for item in list_of_links %}
+    <li>
+        <p>
+            {% if item.source %}
+            {{item.source}} - 
+            {% endif %}
+            {% if item.published %}
+            {{item.published}} - 
+            {% endif %}
+        <a href="{{ item.link }}" target="_blank">{{ item.title }}</a>
+        </p>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}
